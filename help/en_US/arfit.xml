@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ * 
+ * This help file was generated from arfit.sci using help_from_sci().
+ * 
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="arfit" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+
+  <refnamediv>
+    <refname>arfit</refname><refpurpose>Stepwise least squares estimation of multivariate AR model.</refpurpose>
+  </refnamediv>
+
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   [w, A, C, sbc, fpe, th]=arfit(v, pmin, pmax)
+   [w, A, C, sbc, fpe, th]=arfit(v, pmin, pmax, SELECTOR)
+   [w, A, C, sbc, fpe, th]=arfit(v, pmin, pmax, SELECTOR, no_const)
+   [w, A, C, sbc, fpe, th]=arfit(v, pmin, pmax, SELECTOR, no_const, min_order)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Description</title>
+   <para>
+[w,A,C,SBC,FPE,th]=arfit(v,pmin,pmax) produces estimates of the
+parameters of a multivariate AR model of order p,
+   </para>
+   <para>
+v(k,:)' = w' + A1*v(k-1,:)' +...+ Ap*v(k-p,:)' + noise(C),
+   </para>
+   <para>
+where p lies between pmin and pmax and is chosen as the optimizer
+of Schwarz's Bayesian Criterion. The input matrix v must contain
+the time series data, with columns (first dimension) of v(:,l)
+representing variables l=1,...,m and rows v(k,:) (second
+dimension) of v representing observations at different (equally
+spaced) times k=1,..,n. Optionally, v can have a third
+dimension, in which case the matrices v(:,:, itr) represent
+the realizations (e.g., measurement trials) itr=1,...,ntr of the
+time series. ARFIT returns least squares estimates of the
+intercept vector w, of the coefficient matrices A1,...,Ap (as
+A=[A1 ... Ap]), and of the noise covariance matrix C.
+   </para>
+   <para>
+   </para>
+   <para>
+As order selection criteria, arfit computes approximations to
+Schwarz's Bayesian Criterion and to the logarithm of Akaike's Final
+Prediction Error. The order selection criteria for models of order
+pmin:pmax are returned as the vectors SBC and FPE.
+   </para>
+   <para>
+The matrix th contains information needed for the computation of
+confidence intervals. armode and arconf require th as input
+arguments.
+   </para>
+   <para>
+If the optional argument SELECTOR is included in the function call,
+as in arfit(v,pmin,pmax,SELECTOR), SELECTOR is used as the order
+selection criterion in determining the optimum model order. The
+three letter string SELECTOR must have one of the two values 'sbc'
+or 'fpe'. (By default, Schwarz's criterion SBC is used.) If the
+bounds pmin and pmax coincide, the order of the estimated model
+is p=pmin=pmax.
+   </para>
+   <para>
+If the function call contains the optional argument 'zero' as the
+fourth or fifth argument, a model of the form
+   </para>
+   <para>
+v(k,:)' = A1*v(k-1,:)' +...+ Ap*v(k-p,:)' + noise(C)
+   </para>
+   <para>
+is fitted to the time series data. That is, the intercept vector w
+is taken to be zero, which amounts to assuming that the AR(p)
+process has zero mean.
+   </para>
+   <para>
+Modified 19.09.2007 by German Gomez-Herrero, german.gomezherrero@ieee.org
+- New input flag min_order tells the function to try to minimize the
+selected model order by taking that order from which the selection
+criteria decreases very slowly
+   </para>
+   <para>
+Modified 11-06-2007 by German Gomez-Herrero, german.gomezherrero@ieee.org
+- Added AIC criterion
+- First input parameter can be a ddataset object (to save memory resources)
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>Modified 14-Oct-00</member>
+   <member>24-Oct-10 Tim Mullen (added support for multiple realizatons)</member>
+   <member>Tapio Schneider   tapio@gps.caltech.edu</member>
+   <member>Arnold Neumaier  neum@cma.univie.ac.a</member>
+   </simplelist>
+</refsection>
+</refentry>

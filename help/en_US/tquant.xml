@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ * 
+ * This help file was generated from tquant.sci using help_from_sci().
+ * 
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="tquant" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+
+  <refnamediv>
+    <refname>tquant</refname><refpurpose>Quantiles of Student's t distribution</refpurpose>
+  </refnamediv>
+
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   t=tquant(n, p)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Description</title>
+   <para>
+tquant(n, p) is the p-quantile of a t distributed random variable
+with n degrees of freedom; that is, tquant(n, p) is the value below
+which 100p percent of the t distribution with n degrees of freedom
+lies.
+</para>
+</refsection>
+
+<refsection>
+   <title>Bibliography</title>
+   <para>L. Devroye, 1986: "Non-Uniform Random Variate Generation", Springer</para>
+   <para>M. Abramowitz and I. A. Stegun, 1964: "Handbook of Mathematical  Functions"</para>
+</refsection>
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>H. Nahrstaedt - Jan 2011</member>
+   <member>Tapio Schneider      tapio@gps.caltech.edu</member>
+   </simplelist>
+</refsection>
+</refentry>

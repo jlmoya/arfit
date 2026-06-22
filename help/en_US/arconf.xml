@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ * 
+ * This help file was generated from arconf.sci using help_from_sci().
+ * 
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="arconf" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+
+  <refnamediv>
+    <refname>arconf</refname><refpurpose>Confidence intervals for AR coefficients.</refpurpose>
+  </refnamediv>
+
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   [Aerr]=arconf(A,C,th)
+   [Aerr,werr]=arconf(A,C,w,th)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>Aerr:</term>
+      <listitem><para>  margins of error</para></listitem></varlistentry>
+   <varlistentry><term>werr:</term>
+      <listitem><para>  margins of error</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+For an AR(p) model that has been fitted with arfit,
+[Aerr,werr]=arconf(A,C,w,th) computes the margins of error Aerr and
+werr such that (A +/- Aerr) and (w +/- werr) are approximate 95%
+confidence intervals for the elements of the coefficient matrix A
+and for the components of the intercept vector w. The input
+arguments of arconf are output of AR.
+   </para>
+   <para>
+If no intercept vector w has been fitted with arfit (i.e., the flag
+'zero' was an input argument of ARFIT), then [Aerr]=arconf(A,C,th)
+computes the margins of error only for the elements of the
+coefficient matrix A.
+   </para>
+   <para>
+The confidence intervals are based on Student's t distribution,
+which for small samples yields only approximate confidence
+intervals. Inferences drawn from small samples must therefore be
+interpreted cautiously.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>See also</title>
+   <simplelist type="inline">
+   <member><link linkend="arfit">arfit</link></member>
+   </simplelist>
+</refsection>
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>Modified 30-Dec-99</member>
+   <member>Tapio Schneider         tapio@gps.caltech.edu</member>
+   </simplelist>
+</refsection>
+</refentry>

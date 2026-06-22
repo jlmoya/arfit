@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ * 
+ * This help file was generated from armode.sci using help_from_sci().
+ * 
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="armode" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+
+  <refnamediv>
+    <refname>armode</refname><refpurpose>Eigendecomposition of AR model.</refpurpose>
+  </refnamediv>
+
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   [S, Serr, per, tau, exctn, lambda] = armode(A, C, th)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Description</title>
+   <para>
+[S,Serr,per,tau,exctn]=ARMODE(A,C,th) computes the
+eigendecomposition of an AR(p) model that has been fitted using
+ARFIT. The input arguments of ARMODE are output of ARFIT.
+   </para>
+   <para>
+The columns of the output matrix S contain the estimated eigenmodes
+of the AR model. The output matrix Serr contains margins of error
+for the components of the estimated eigenmodes S, such that
+(S +/- Serr) are approximate 95% confidence intervals for the
+individual components of the eigenmodes.
+   </para>
+   <para>
+The two-row matrices per and tau contain in their first rows the
+estimated oscillation period per(1,k) and the estimated damping
+time tau(1,k) of the eigenmode S(:,k). In their second rows, the
+matrices per and tau contain margins of error for the periods and
+damping times, such that
+( per(1,k) +/- per(2,k) )   and   ( tau(1,k) +/- tau(2,k) )
+are approximate 95% confidence intervals for the period and damping
+time of eigenmode S(:,k).
+   </para>
+   <para>
+For a purely relaxatory eigenmode, the period is infinite (Inf).
+For an oscillatory eigenmode, the periods are finite.
+   </para>
+   <para>
+The excitation of an eigenmode measures its dynamical importance
+and is returned as a fraction exctn that is normalized such that
+the sum of the excitations of all eigenmodes equals one.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>See also</title>
+   <simplelist type="inline">
+   <member><link linkend="arfit">arfit</link></member>
+   <member><link linkend="arconf">arconf</link></member>
+   </simplelist>
+</refsection>
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>Modified 13-Oct-00</member>
+   <member>Tapio Schneider  tapio@gps.caltech.edu</member>
+   </simplelist>
+</refsection>
+</refentry>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ * 
+ * This help file was generated from arsim.sci using help_from_sci().
+ * 
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="arsim" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+
+  <refnamediv>
+    <refname>arsim</refname><refpurpose>Simulation of AR process.</refpurpose>
+  </refnamediv>
+
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   [v]=arsim(w,A,C,n_ntr,ndisc)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Description</title>
+   <para>
+v=ARSIM(w,A,C,n) simulates n time steps of the AR(p) process
+   </para>
+   <para>
+v(k,:)' = w' + A1*v(k-1,:)' +...+ Ap*v(k-p,:)' + eta(k,:)',
+   </para>
+   <para>
+where A=[A1 ... Ap] is the coefficient matrix, and w is a vector of
+intercept terms that is included to allow for a nonzero mean of the
+process. The vectors eta(k,:) are independent Gaussian noise
+vectors with mean zero and covariance matrix C.
+   </para>
+   <para>
+The p vectors of initial values for the simulation are taken to
+be equal to the mean value of the process. (The process mean is
+calculated from the parameters A and w.) To avoid spin-up effects,
+the first 10^3 time steps are discarded. Alternatively,
+ARSIM(w,A,C,n,ndisc) discards the first ndisc time steps.
+   </para>
+   <para>
+arsim(w,A,C,[n, ntr]) generates ntr realizations (trials) of
+length n of the AR(p) process, which are output as the matrices
+v(:,:,itr) with itr=1,...,ntr.
+</para>
+</refsection>
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>Modified 13-Oct-00</member>
+   <member>Tapio Schneider         tapio@gps.caltech.edu</member>
+   </simplelist>
+</refsection>
+</refentry>

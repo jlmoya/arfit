@@ -1,0 +1,11 @@
+*.bin
+macros/lib
+macros/names
+loader.sce
+unloader.sce
+cleaner.sce
+jar
+.last_*
+.list_*
+.DS_Store
+*~

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ * 
+ * This help file was generated from acf.sci using help_from_sci().
+ * 
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="acf" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+
+  <refnamediv>
+    <refname>acf</refname><refpurpose>Plot of sample autocorrelation function.</refpurpose>
+  </refnamediv>
+
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   acf(x)
+   acf(x,k)
+   acf(X,k,'name')
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>x:</term>
+      <listitem><para>  univariate time series</para></listitem></varlistentry>
+   <varlistentry><term>k:</term>
+      <listitem><para> lag</para></listitem></varlistentry>
+   <varlistentry><term>'name' :</term>
+      <listitem><para> title of the plot</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+acf(x) plots the sample autocorrelation function of the univariate
+time series in vector x.  By default, the sample autocorrelation
+function is plotted up to lag 25.
+   </para>
+   <para>
+acf(x,k) plots the sample
+autocorrelation function up to lag k.
+   </para>
+   <para>
+acf(X,k,'name') sets the
+title of the plot to 'name'.
+   </para>
+   <para>
+The approximate 95% confidence limits of the autocorrelation
+function of an IID process of the same length as X are also
+displayed.  Sample autocorrlations lying outside the 95% confidence
+intervals of an IID process are marked by an asterisk.
+   </para>
+   <para>
+ACF requires nan_xcorr from the NaN Toolbox.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>Modified 30-Dec-99</member>
+   <member>Tapio Schneider   tapio@gps.caltech.edu</member>
+   </simplelist>
+</refsection>
+</refentry>

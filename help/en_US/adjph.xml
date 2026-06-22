@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ * 
+ * This help file was generated from adjph.sci using help_from_sci().
+ * 
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="adjph" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+
+  <refnamediv>
+    <refname>adjph</refname><refpurpose>Normalization of columns of a complex matrix.</refpurpose>
+  </refnamediv>
+
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   OX=adjph(X)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>X:</term>
+      <listitem><para> complex matrix</para></listitem></varlistentry>
+   <varlistentry><term>OX:</term>
+      <listitem><para> complex matrix</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+   </para>
+   <para>
+Given a complex matrix X, OX=adjph(X) returns the complex matrix OX
+that is obtained from X by multiplying column vectors of X with
+phase factors exp(%i*phi) such that the real part and the imaginary
+part of each column vector of OX are orthogonal and the norm of the
+real part is greater than or equal to the norm of the imaginary
+part.
+   </para>
+   <para>
+adjph is called by armode.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>See also</title>
+   <simplelist type="inline">
+   <member><link linkend="armode">armode</link></member>
+   </simplelist>
+</refsection>
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>Modified 16-Dec-99</member>
+   <member>Tapio Schneider   tapio@gps.caltech.edu</member>
+   </simplelist>
+</refsection>
+</refentry>

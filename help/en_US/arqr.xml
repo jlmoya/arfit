@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ * 
+ * This help file was generated from arqr.sci using help_from_sci().
+ * 
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="arqr" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+
+  <refnamediv>
+    <refname>arqr</refname><refpurpose>QR factorization for least squares estimation of AR model.</refpurpose>
+  </refnamediv>
+
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   [R, rscale]=arqr(v, p, mcor)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Description</title>
+   <para>
+[R, SCALE]=ARQR(v,p,mcor) computes the QR factorization needed in
+the least squares estimation of parameters of an AR(p) model. If
+the input flag mcor equals one, a vector of intercept terms is
+being fitted. If mcor equals zero, the process v is assumed to have
+mean zero. The output argument R is the upper triangular matrix
+appearing in the QR factorization of the AR model, and SCALE is a
+vector of scaling factors used to regularize the QR factorization.
+   </para>
+   <para>
+ARQR is called by ARFIT.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>See also</title>
+   <simplelist type="inline">
+   <member><link linkend="arfit">arfit</link></member>
+   </simplelist>
+</refsection>
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>Modified 29-Dec-99</member>
+   <member>24-Oct-10 Tim Mullen (added support for multiple realizatons)</member>
+   <member>Author: Tapio Schneider     tapio@gps.caltech.edu</member>
+   </simplelist>
+</refsection>
+</refentry>

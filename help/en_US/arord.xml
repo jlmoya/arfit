@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ * 
+ * This help file was generated from arord.sci using help_from_sci().
+ * 
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="arord" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+
+  <refnamediv>
+    <refname>arord</refname><refpurpose>Evaluates criteria for selecting the order of an AR model.</refpurpose>
+  </refnamediv>
+
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   [sbc, fpe, logdp, np] = arord(R, m, mcor, ne, pmin, pmax)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Description</title>
+   <para>
+[SBC,FPE]=ARORD(R,m,mcor,ne,pmin,pmax) returns approximate values
+of the order selection criteria SBC and FPE for models of order
+pmin:pmax. The input matrix R is the upper triangular factor in the
+QR factorization of the AR model; m is the dimension of the state
+vectors; the flag mcor indicates whether or not an intercept vector
+is being fitted; and ne is the number of block equations of size m
+used in the estimation. The returned values of the order selection
+criteria are approximate in that in evaluating a selection
+criterion for an AR model of order p &lt; pmax, pmax-p initial values
+of the given time series are ignored.
+   </para>
+   <para>
+For testing purposes, ARORD also returns the vectors logdp and np,
+containing the logarithms of the determinants of the (scaled)
+covariance matrix estimates and the number of parameter vectors at
+each order pmin:pmax.
+   </para>
+   <para>
+ARORD is called by ARFIT.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>See also</title>
+   <simplelist type="inline">
+   <member><link linkend="arfit">arfit</link></member>
+   <member><link linkend="arqr">arqr</link></member>
+   </simplelist>
+</refsection>
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>Modified 17-Dec-99</member>
+   <member>Author: Tapio Schneider     tapio@gps.caltech.edu</member>
+   </simplelist>
+</refsection>
+</refentry>

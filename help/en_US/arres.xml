@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ * 
+ * This help file was generated from arres.sci using help_from_sci().
+ * 
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="arres" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+
+  <refnamediv>
+    <refname>arres</refname><refpurpose>Test of residuals of fitted AR model.</refpurpose>
+  </refnamediv>
+
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   [siglev,res, lmp, dof_lmp]=arres(w,A,v,k)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Description</title>
+   <para>
+[siglev,res]=ARRES(w,A,v) computes the time series of residuals
+   </para>
+   <para>
+res(k,:)' = v(k+p,:)'- w - A1*v(k+p-1,:)' - ... - Ap*v(k,:)'
+   </para>
+   <para>
+of an AR(p) model with A=[A1 ... Ap]. If v has three dimensions,
+the 3rd dimension is treated as indicating multiple realizations
+(trials) of the time series, that is, v(:,:,itr) is taken as the
+itr-th trial.
+   </para>
+   <para>
+   </para>
+   <para>
+Also returned is the significance level siglev of the modified
+Li-McLeod portmanteau (LMP) statistic.
+   </para>
+   <para>
+Correlation matrices for the LMP statistic are computed up to lag
+k=20, which can be changed to lag k by using
+[siglev,res]=ARRES(w,A,v,k).
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Bibliography</title>
+   <para>Li, W. K., and A. I. McLeod, 1981: Distribution of the</para>
+   <para>Residual Autocorrelations in Multivariate ARMA Time Series</para>
+   <para>Models, J. Roy. Stat. Soc. B, 43, 231--239.</para>
+</refsection>
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>Modified 11-Jun-07 German Gomez-Herrero, german.gomezherrero@ieee.org</member>
+   <member>- Input data can be a ddataset object (to save memory resources)</member>
+   <member>Modified 17-Dec-99</member>
+   <member>24-Oct-10 Tim Mullen (added support for multiple realizations)</member>
+   <member>Author: Tapio Schneider   tapio@gps.caltech.edu</member>
+   </simplelist>
+</refsection>
+</refentry>
